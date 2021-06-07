@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+}
+
+html {
+    color: rgb(77, 90, 104);
+    font: 16px sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.618em;
+}
+
+.JacKr__name {
+    font: 48px sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 1rem;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__nav__list {
+    display: flex;  
+}
+
+.header__nav__listItem {
+    background-color: lightsteelblue;
+    list-style-type: none;
+    margin: 6px;
+    margin-right: 2rem;
+}
+
+.header__nav__listItem:hover {
+    background-color: rgb(131, 131, 146);
+    font: bold;
+    transition: .5s;
+}
+
+.hero__image {
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+
+.med__help__numbers__by__region {
+    display: block;
+    margin: 0;
+}
+
+.footer {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .header {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+        margin: 0;
+    }
+
+    .header__nav__list {
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}    
