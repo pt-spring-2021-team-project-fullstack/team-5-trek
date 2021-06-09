@@ -14,6 +14,7 @@ html {
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 1rem;
 }
+
 .header {
     display: flex;
     align-items: center;
@@ -47,6 +48,18 @@ html {
     width: 100%;
 }
 
+.ways__to__contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 80rem;
+    margin: 2rem;
+}
+
+.fillable__form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .med__help__numbers__by__region {
     display: block;
     margin: 0;
@@ -67,6 +80,13 @@ html {
     }
 
     .header__nav__list {
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .container {
         display: flex;
         margin: 0;
         flex-direction: column;
