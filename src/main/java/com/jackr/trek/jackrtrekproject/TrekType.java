@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -14,6 +15,8 @@ public class TrekType {
     private Long id;
 
     private String trekType;
+    private String trekTypePerContinent;
+    private String trekTypePerContinentRegion;
     private String trekTypeDescription;
     private String trekTypeDifficultyLevel;
     private String trekTypePhysicalRequirements;
@@ -29,6 +32,14 @@ public class TrekType {
 
     public String getTrekType() {
         return trekType;
+    }
+
+    public String getTrekTypePerContinent() {
+        return trekTypePerContinent;
+    }
+
+    public String getTrekTypePerContinentRegion() {
+        return trekTypePerContinentRegion;
     }
 
     public String getTrekTypeDescription() {
@@ -57,9 +68,12 @@ public class TrekType {
 
     protected TrekType() {};
 
-    public TrekType(String trekType, String trekTypeDescription, String trekTypeDifficultyLevel,
+    public TrekType(String trekType, String trekTypePerContinent, String trekTypePerContinentRegion,
+                    String trekTypeDescription, String trekTypeDifficultyLevel,
                     String trekTypePhysicalRequirements, String trekTypeTips, String trekTypeTerrain) {
         this.trekType = trekType;
+        this.trekTypePerContinent = trekTypePerContinent;
+        this.trekTypePerContinentRegion = trekTypePerContinentRegion;
         this.trekTypeDescription = trekTypeDescription;
         this.trekTypeDifficultyLevel = trekTypeDifficultyLevel;
         this.trekTypePhysicalRequirements = trekTypePhysicalRequirements;
