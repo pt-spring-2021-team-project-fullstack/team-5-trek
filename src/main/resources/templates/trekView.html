@@ -9,9 +9,8 @@
 <h1>TrekView</h1>
 
 <div th:each="trek: ${trekModel}">
+    <p th:text=" 'Trek Name: ' + ${trek.trekName}"></p>
     <p th:text=" 'Trek Type: ' + ${trek.trekType.trekType}"></p>
-    <p th:text=" 'Continent: ' + ${trek.trekType.trekTypePerContinent}"></p>
-    <p th:text=" 'Region: ' + ${trek.trekType.trekTypePerContinentRegion}"></p>
     <p th:text=" 'Description: ' + ${trek.trekDescription}"></p>
     <p th:text=" 'Guided: ' + ${trek.trekGuidedOrNot}"></p>
     <p th:text=" 'Landmarks: ' + ${trek.trekLandmarks}"></p>
@@ -21,7 +20,6 @@
     <p th:text=" 'Cost: ' + ${trek.trekCost}"></p>
     <p th:text=" 'Length: ' + ${trek.trekLength}"></p>
     <p th:text=" 'Reviews: ' + ${trek.trekReviews}"></p>
-    <p th:text=" 'Physical Requirements: '+ ${trek.trekType"
 </div>
 
 </body>
