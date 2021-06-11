@@ -2,6 +2,7 @@ package com.jackr.trek.jackrtrekproject;
 
 import javax.persistence.*;
 import java.util.Collection;
+
 import java.util.Objects;
 
 @Entity

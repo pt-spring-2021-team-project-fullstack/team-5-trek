@@ -1,6 +1,7 @@
 package com.jackr.trek.jackrtrekproject;
 
 import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
@@ -13,7 +14,7 @@ public class Region {
 
     private String nameOfRegion;
 
-    @ManyToOne(mappedBy="nameOfContinent")
+    @ManyToOne
     private Collection<Continent> continents;
 
     @OneToMany

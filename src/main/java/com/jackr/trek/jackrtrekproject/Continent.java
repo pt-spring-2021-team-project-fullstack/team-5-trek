@@ -16,6 +16,8 @@ public class Continent {
     @OneToMany
     private Collection<Region> region;
 
+    private Region region;
+
     @OneToMany
     private Collection<Trek> treks;
 
@@ -29,7 +31,9 @@ public class Continent {
         return id;
     }
 
+
     public Collection<Region> getRegion(){
+
         return region;
     }
 
