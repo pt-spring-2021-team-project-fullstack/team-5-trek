@@ -1,6 +1,5 @@
 package com.jackr.trek.jackrtrekproject;
 
-
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
@@ -15,6 +14,8 @@ public class Continent {
     private String nameOfContinent;
 
     @OneToMany
+    private Collection<Region> region;
+
     private Region region;
 
     @OneToMany
@@ -30,7 +31,9 @@ public class Continent {
         return id;
     }
 
-    public Region getRegion(){
+
+    public Collection<Region> getRegion(){
+
         return region;
     }
 
