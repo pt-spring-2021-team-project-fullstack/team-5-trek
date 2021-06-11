@@ -1,9 +1,7 @@
 package com.jackr.trek.jackrtrekproject;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -22,8 +20,11 @@ public class Trek {
     private String trekLength;
     private String trekReviews;
 
-    @ManyToOne
+    @OneToOne
     private TrekType trekType;
+
+    @ManyToOne
+    private Collection<Region> regions;
 
     public Long getId() {
         return id;

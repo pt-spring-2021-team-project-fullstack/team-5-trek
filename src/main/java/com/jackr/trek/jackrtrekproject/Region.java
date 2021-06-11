@@ -1,9 +1,6 @@
 package com.jackr.trek.jackrtrekproject;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -16,10 +13,10 @@ public class Region {
 
     private String nameOfRegion;
 
-    @ManyToOne
+    @ManyToOne(mappedBy="nameOfContinent")
     private Collection<Continent> continents;
 
-    @ManyToOne
+    @OneToMany
     private Collection<Trek> treks;
 
     protected Region(){}
