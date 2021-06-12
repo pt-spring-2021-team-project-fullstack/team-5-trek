@@ -27,6 +27,9 @@ public class Trek {
     @ManyToOne
     private Collection<Region> regions;
 
+    @ManyToOne
+    private Collection<Continent> continents;
+
     public Long getId() {
         return id;
     }
