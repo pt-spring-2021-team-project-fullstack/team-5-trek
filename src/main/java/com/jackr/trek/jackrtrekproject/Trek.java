@@ -21,7 +21,7 @@ public class Trek {
     private String trekLength;
     private String trekReviews;
 
-    @OneToOne
+    @ManyToOne
     private TrekType trekType;
 
     @ManyToOne
