@@ -71,7 +71,7 @@ public class Populator implements CommandLineRunner {
         Region savanna = new Region("Savanna");
         Region swahiliCoast = new Region("Swahili Coast");
         Region rainForest = new Region("Rain Forest");
-        Region africanGreatLakes = new Region("African Great Lakes";
+        Region africanGreatLakes = new Region("African Great Lakes");
         Region southernAfrica = new Region("Southern Africa");
         Region westernUplands = new Region("Western Uplands");
         Region northEuropeanPlain = new Region("North European Plain");
