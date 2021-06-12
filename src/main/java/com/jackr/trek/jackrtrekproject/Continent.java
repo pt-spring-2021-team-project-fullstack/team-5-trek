@@ -16,7 +16,7 @@ public class Continent {
     @OneToMany
     private Collection<Region> region;
 
-    @OneToMany
+    @OneToMany(mappedBy = "continent")
     private Collection<Trek> treks;
 
     protected Continent(){}
