@@ -18,24 +18,23 @@ public class Region {
 //    private Collection<Continent> continents;
 
     @ManyToOne
-    private Continent continents;
+    private Continent continent;
 
-    @OneToMany(mappedBy = "regions")
+    @OneToMany(mappedBy = "region")
     private Collection<Trek> treks;
 
     protected Region(){}
 
-    public Region(String nameOfRegion, Continent continents){
-
+    public Region(String nameOfRegion, Continent continent) {
         this.nameOfRegion = nameOfRegion;
-        this.continents = continents;
+        this.continent = continent;
     }
 
-    public Long getId(){
+    public Long getId() {
         return id;
     }
 
-    public String getNameOfRegion(){
+    public String getNameOfRegion() {
         return nameOfRegion;
     }
 
@@ -43,8 +42,8 @@ public class Region {
 //        return continents;
 //    }
 
-    public Continent getContinents() {
-        return continents;
+    public Continent getContinent() {
+        return continent;
     }
 
     public Collection<Trek> getTreks(){

@@ -11,35 +11,34 @@ public class Continent {
     @GeneratedValue
     private Long id;
 
-    private String nameOfContinent;
+    private String name;
 
-    @OneToMany(mappedBy = "continents")
-    private Collection<Region> region;
+    @OneToMany(mappedBy = "continent")
+    private Collection<Region> regions;
 
-    @OneToMany(mappedBy = "continents")
+    @OneToMany(mappedBy = "continent")
     private Collection<Trek> treks;
 
     protected Continent(){}
 
-    public Continent(String nameOfContinent){
-        this.nameOfContinent = nameOfContinent;
+    public Continent(String name){
+        this.name = name;
     }
 
     public Long getId(){
         return id;
     }
 
-    public Collection<Region> getRegion(){
-
-        return region;
+    public Collection<Region> getRegions(){
+        return regions;
     }
 
     public Collection<Trek> getTreks(){
         return treks;
     }
 
-    public String getNameOfContinent(){
-        return nameOfContinent;
+    public String getName(){
+        return name;
     }
 
     @Override

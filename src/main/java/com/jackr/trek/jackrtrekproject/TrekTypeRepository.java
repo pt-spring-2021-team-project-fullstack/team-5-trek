@@ -6,6 +6,6 @@ import java.util.Optional;
 
 public interface TrekTypeRepository extends CrudRepository<TrekType, Long> {
 
-    Optional<TrekType> findByTrekTypePerContinent(String trekTypePerContinent);
-    Optional<TrekType> findByTrekTypePerContinentRegion(String trekTypePerContinentRegion);
+    //Optional<TrekType> findByTrekTypePerContinent(String trekTypePerContinent);
+
 }

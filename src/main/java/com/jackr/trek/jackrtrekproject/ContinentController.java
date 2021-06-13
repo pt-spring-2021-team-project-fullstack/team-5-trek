@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 
@@ -20,10 +21,9 @@ public class ContinentController {
         return "continentsView";
     }
 
-    @GetMapping("/continent/{nameOfContinent}")
-    public String displaySingleContinent(@PathVariable String nameOfContinent, Model model) {
-        Continent retrievedContinent = continentRepo.findByContinent(nameOfContinent);
-        model.addAttribute("continent", retrievedContinent);
+    @RequestMapping("/continent")///{nameOfContinent}")
+    public String displaySingleContinent(@RequestParam (value = "id") Long id, Model model) {
+        model.addAttribute("continent", continentRepo.findById(id));
         return "continentView";
     }
 }
