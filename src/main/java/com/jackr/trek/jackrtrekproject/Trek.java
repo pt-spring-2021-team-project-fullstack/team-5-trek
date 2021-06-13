@@ -11,6 +11,7 @@ public class Trek {
     @GeneratedValue
     private Long id;
 
+    private String name;
     private String trekDescription;
     private boolean trekGuidedOrNot;
     private String trekLandmarks;
@@ -24,14 +25,26 @@ public class Trek {
     @ManyToOne
     private TrekType trekType;
 
-    @ManyToOne
-    private Collection<Region> regions;
+//    @ManyToOne
+//    private Collection<Region> regions;
 
     @ManyToOne
-    private Collection<Continent> continents;
+    @JoinColumn(name = "region_id")
+    private Region regions;
+
+//    @ManyToOne
+//    private Collection<Continent> continents;
+
+    @ManyToOne
+    @JoinColumn(name = "continent_id")
+    private Continent continents;
 
     public Long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getTrekDescription() {
@@ -74,9 +87,12 @@ public class Trek {
         return trekType;
     }
 
-    public Trek(String trekDescription, boolean trekGuidedOrNot, String trekLandmarks, String trekCampsiteInfo,
+    public Trek(Region regions, Continent continents, String name, String trekDescription, boolean trekGuidedOrNot, String trekLandmarks, String trekCampsiteInfo,
                 String trekTransportation, String nearbyActivities, String trekCost, String trekLength,
                 String trekReviews, TrekType trekType) {
+        this.regions = regions;
+        this.continents = continents;
+        this.name = name;
         this.trekDescription = trekDescription;
         this.trekGuidedOrNot = trekGuidedOrNot;
         this.trekLandmarks = trekLandmarks;

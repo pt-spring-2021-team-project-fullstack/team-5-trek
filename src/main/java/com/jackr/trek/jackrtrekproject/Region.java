@@ -14,16 +14,21 @@ public class Region {
 
     private String nameOfRegion;
 
-    @ManyToOne
-    private Collection<Continent> continents;
+//    @ManyToOne
+//    private Collection<Continent> continents;
 
-    @OneToMany
+    @ManyToOne
+    private Continent continents;
+
+    @OneToMany(mappedBy = "regions")
     private Collection<Trek> treks;
 
     protected Region(){}
 
-    public Region(String nameOfRegion){
+    public Region(String nameOfRegion, Continent continents){
+
         this.nameOfRegion = nameOfRegion;
+        this.continents = continents;
     }
 
     public Long getId(){
@@ -34,7 +39,11 @@ public class Region {
         return nameOfRegion;
     }
 
-    public Collection<Continent> getContinents(){
+//    public Collection<Continent> getContinents(){
+//        return continents;
+//    }
+
+    public Continent getContinents() {
         return continents;
     }
 

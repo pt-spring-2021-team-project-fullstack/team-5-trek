@@ -13,10 +13,10 @@ public class Continent {
 
     private String nameOfContinent;
 
-    @OneToMany
+    @OneToMany(mappedBy = "continents")
     private Collection<Region> region;
 
-    @OneToMany(mappedBy = "continent")
+    @OneToMany(mappedBy = "continents")
     private Collection<Trek> treks;
 
     protected Continent(){}
