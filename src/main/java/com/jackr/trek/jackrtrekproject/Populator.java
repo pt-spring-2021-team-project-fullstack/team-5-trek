@@ -23,24 +23,14 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        TrekType easy = new TrekType("easy", "continent here", "region here", "description of trek type",
-                "difficulty level", "physical requirements", "trek tips here", "terrain info here");
-        TrekType moderate = new TrekType("moderate", "continent here", "region here", "description of trek type",
-                "difficulty level", "physical requirements", "trek tips here", "terrain info here");
-        TrekType strenuous = new TrekType("strenuous", "continent here", "region here", "description of trek type",
-                "difficulty level", "physical requirements", "trek tips here", "terrain info here");
-        TrekType difficult = new TrekType("difficult", "continent here", "region here", "description of trek type",
-                "difficulty level", "physical requirements", "trek tips here", "terrain info here");
+        TrekType easy = new TrekType("Easy");
+        TrekType moderate = new TrekType("Moderate");
+        TrekType strenuous = new TrekType("Strenuous");
+        TrekType difficult = new TrekType("Difficult");
         trekTypeRepo.save(easy);
         trekTypeRepo.save(moderate);
         trekTypeRepo.save(strenuous);
         trekTypeRepo.save(difficult);
-
-        //we will eventually include all the treks here and trek1 will be renamed to the actual trek name
-        Trek trek1 = new Trek("", true, "", "", "",
-                "", "", "", "", easy);
-
-        trekRepo.save(trek1);
 
         Continent northAmerica = new Continent("North America");
         Continent southAmerica = new Continent("South America");
@@ -63,7 +53,7 @@ public class Populator implements CommandLineRunner {
         Region variedEasternRegion = new Region("Varied Eastern Region");
         Region caribbean = new Region("Caribbean");
         Region mountainsAndHighlands = new Region("Mountains and Highlands");
-        Region riverBasins = new Region("riverBasins");
+        Region riverBasins = new Region("River Basins");
         Region coastalPlains = new Region("Coastal Plains");
         Region sahara = new Region("Sahara");
         Region sahel = new Region("Sahel");
@@ -124,5 +114,11 @@ public class Populator implements CommandLineRunner {
         regionRepo.save(southPole);
         regionRepo.save(westAntarctica);
         regionRepo.save(rossSea);
+
+        //we will eventually include all the treks here and trek1 will be renamed to the actual trek name
+        Trek trek1 = new Trek("", easy, antarctica, rossSea, "", true, "",
+                "", "", "", "", "", "");
+
+        trekRepo.save(trek1);
     }
 }

@@ -14,79 +14,35 @@ public class TrekType {
     @GeneratedValue
     private Long id;
 
-    private String trekType;
-    private String trekTypePerContinent;
-    private String trekTypePerContinentRegion;
-    private String trekTypeDescription;
-    private String trekTypeDifficultyLevel;
-    private String trekTypePhysicalRequirements;
-    private String trekTypeTips;
-    private String trekTypeTerrain;
+    private String difficultyLevel;
 
-    @OneToMany(mappedBy = "trekType")
-    private Collection<Trek> allTreks;
+    @OneToMany(mappedBy = "difficultyLevel")
+    private Collection<Trek> treks;
+
+    public TrekType() {}
+
+    public TrekType(String difficultyLevel) {
+        this.difficultyLevel = difficultyLevel;
+    }
 
     public Long getId() {
         return id;
     }
 
-    public String getTrekType() {
-        return trekType;
+    public String getTrekDifficultyLevel() {
+        return difficultyLevel;
     }
 
-    public String getTrekTypePerContinent() {
-        return trekTypePerContinent;
-    }
-
-    public String getTrekTypePerContinentRegion() {
-        return trekTypePerContinentRegion;
-    }
-
-    public String getTrekTypeDescription() {
-        return trekTypeDescription;
-    }
-
-    public String getTrekTypeDifficultyLevel() {
-        return trekTypeDifficultyLevel;
-    }
-
-    public String getTrekTypePhysicalRequirements() {
-        return trekTypePhysicalRequirements;
-    }
-
-    public String getTrekTypeTips() {
-        return trekTypeTips;
-    }
-
-    public String getTrekTypeTerrain() {
-        return trekTypeTerrain;
-    }
-
-    public Collection<Trek> getAllTreks() {
-        return allTreks;
-    }
-
-    protected TrekType() {};
-
-    public TrekType(String trekType, String trekTypePerContinent, String trekTypePerContinentRegion,
-                    String trekTypeDescription, String trekTypeDifficultyLevel,
-                    String trekTypePhysicalRequirements, String trekTypeTips, String trekTypeTerrain) {
-        this.trekType = trekType;
-        this.trekTypePerContinent = trekTypePerContinent;
-        this.trekTypePerContinentRegion = trekTypePerContinentRegion;
-        this.trekTypeDescription = trekTypeDescription;
-        this.trekTypeDifficultyLevel = trekTypeDifficultyLevel;
-        this.trekTypePhysicalRequirements = trekTypePhysicalRequirements;
-        this.trekTypeTips = trekTypeTips;
-        this.trekTypeTerrain = trekTypeTerrain;
+    public Collection<Trek> getTreks() {
+        return treks;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TrekType that = (TrekType) o;
-        return Objects.equals(id, that.id);
+        TrekType trekType = (TrekType) o;
+        return Objects.equals(id, trekType.id);
     }
 
     @Override
