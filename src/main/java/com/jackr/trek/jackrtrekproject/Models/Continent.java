@@ -1,4 +1,4 @@
-package com.jackr.trek.jackrtrekproject;
+package com.jackr.trek.jackrtrekproject.Models;
 
 import javax.persistence.*;
 import java.util.Collection;

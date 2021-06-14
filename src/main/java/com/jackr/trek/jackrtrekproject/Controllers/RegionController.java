@@ -1,5 +1,7 @@
-package com.jackr.trek.jackrtrekproject;
+package com.jackr.trek.jackrtrekproject.Controllers;
 
+import com.jackr.trek.jackrtrekproject.Models.Region;
+import com.jackr.trek.jackrtrekproject.Repositorys.RegionRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +23,9 @@ public class RegionController {
         return "regionsView";
     }
 
-    @GetMapping("/regions/{id}")
-    public String displaySingleRegion(@PathVariable long id, Model model){
-        Optional<Region> retrievedRegion = regionRepo.findById(id);
+    @GetMapping("/region")
+    public String displaySingleRegion(@PathVariable String nameOfRegion, Model model){
+        Optional<Region> retrievedRegion = regionRepo.findByNameOfRegion(nameOfRegion);
         model.addAttribute("regionModel",retrievedRegion.get());
         return "regionView";
 
@@ -32,5 +34,5 @@ public class RegionController {
 
 
 
-    
+
 }

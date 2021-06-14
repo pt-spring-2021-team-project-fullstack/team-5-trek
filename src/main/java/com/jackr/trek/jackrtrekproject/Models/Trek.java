@@ -1,7 +1,6 @@
-package com.jackr.trek.jackrtrekproject;
+package com.jackr.trek.jackrtrekproject.Models;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 import java.util.Objects;
 
@@ -11,7 +10,7 @@ public class Trek {
     @GeneratedValue
     private Long id;
 
-    private String name;
+    private String trekName;
     private String trekDescription;
     private boolean trekGuidedOrNot;
     private String trekLandmarks;
@@ -41,8 +40,8 @@ public class Trek {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getTrekName() {
+        return trekName;
     }
 
     public String getTrekDescription() {
@@ -85,12 +84,12 @@ public class Trek {
         return trekType;
     }
 
-    public Trek(Region region, Continent continent, String name, String trekDescription, boolean trekGuidedOrNot, String trekLandmarks, String trekCampsiteInfo,
+    public Trek(Region region, Continent continent, String trekName, String trekDescription, boolean trekGuidedOrNot, String trekLandmarks, String trekCampsiteInfo,
                 String trekTransportation, String nearbyActivities, String trekCost, String trekLength,
                 String trekReviews, TrekType trekType) {
         this.region = region;
         this.continent = continent;
-        this.name = name;
+        this.trekName = trekName;
         this.trekDescription = trekDescription;
         this.trekGuidedOrNot = trekGuidedOrNot;
         this.trekLandmarks = trekLandmarks;

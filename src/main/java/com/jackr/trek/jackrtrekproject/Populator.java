@@ -1,5 +1,13 @@
 package com.jackr.trek.jackrtrekproject;
 
+import com.jackr.trek.jackrtrekproject.Models.Continent;
+import com.jackr.trek.jackrtrekproject.Models.Region;
+import com.jackr.trek.jackrtrekproject.Models.Trek;
+import com.jackr.trek.jackrtrekproject.Models.TrekType;
+import com.jackr.trek.jackrtrekproject.Repositorys.ContinentRepository;
+import com.jackr.trek.jackrtrekproject.Repositorys.RegionRepository;
+import com.jackr.trek.jackrtrekproject.Repositorys.TrekRepository;
+import com.jackr.trek.jackrtrekproject.Repositorys.TrekTypeRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

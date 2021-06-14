@@ -1,13 +1,12 @@
-package com.jackr.trek.jackrtrekproject;
+package com.jackr.trek.jackrtrekproject.Controllers;
 
+import com.jackr.trek.jackrtrekproject.Repositorys.TrekRepository;
+import com.jackr.trek.jackrtrekproject.Repositorys.TrekTypeRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
-import java.util.Optional;
 
 @Controller
 public class TrekController {

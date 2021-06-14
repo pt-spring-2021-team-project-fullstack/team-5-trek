@@ -1,8 +1,7 @@
-package com.jackr.trek.jackrtrekproject;
+package com.jackr.trek.jackrtrekproject.Repositorys;
 
+import com.jackr.trek.jackrtrekproject.Models.TrekType;
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.Optional;
 
 public interface TrekTypeRepository extends CrudRepository<TrekType, Long> {
 
