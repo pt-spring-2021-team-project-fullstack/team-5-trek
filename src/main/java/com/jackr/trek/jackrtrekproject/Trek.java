@@ -12,15 +12,15 @@ public class Trek {
     private Long id;
 
     private String name;
-    private String description;
-//    private boolean trekGuidedOrNot;
-//    private String trekLandmarks;
-//    private String trekCampsiteInfo;
-//    private String trekTransportation;
-//    private String nearbyActivities;
-//    private String trekCost;
-//    private String trekLength;
-//    private String trekReviews;
+    private String trekDescription;
+    private boolean trekGuidedOrNot;
+    private String trekLandmarks;
+    private String trekCampsiteInfo;
+    private String trekTransportation;
+    private String nearbyActivities;
+    private String trekCost;
+    private String trekLength;
+    private String trekReviews;
 
     @ManyToOne
     private TrekType trekType;
@@ -47,60 +47,62 @@ public class Trek {
         return name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getTrekDescription() {
+        return trekDescription;
     }
 
-//    public boolean getGuideInfo() {
-//        return trekGuidedOrNot;
-//    }
-//
-//    public String getTrekLandmarks() {
-//        return trekLandmarks;
-//    }
-//
-//    public String getTrekCampsiteInfo() {
-//        return trekCampsiteInfo;
-//    }
-//
-//    public String getTrekTransportation() {
-//        return trekTransportation;
-//    }
-//
-//    public String getNearbyActivities() {
-//        return nearbyActivities;
-//    }
-//
-//    public String getTrekCost() {
-//        return trekCost;
-//    }
-//
-//    public String getTrekLength() {
-//        return trekLength;
-//    }
-//
-//    public String getTrekReviews() {
-//        return trekReviews;
-//    }
-//
-//    public TrekType getTrekType() {
-//        return trekType;
-//    }
+    public boolean getGuideInfo() {
+        return trekGuidedOrNot;
+    }
 
-    public Trek(Region region, Continent continent, String name, String description) {
+    public String getTrekLandmarks() {
+        return trekLandmarks;
+    }
+
+    public String getTrekCampsiteInfo() {
+        return trekCampsiteInfo;
+    }
+
+    public String getTrekTransportation() {
+        return trekTransportation;
+    }
+
+    public String getNearbyActivities() {
+        return nearbyActivities;
+    }
+
+    public String getTrekCost() {
+        return trekCost;
+    }
+
+    public String getTrekLength() {
+        return trekLength;
+    }
+
+    public String getTrekReviews() {
+        return trekReviews;
+    }
+
+    public TrekType getTrekType() {
+        return trekType;
+    }
+
+    public Trek(Region region, Continent continent, String name, String trekDescription, boolean trekGuidedOrNot, String trekLandmarks, String trekCampsiteInfo,
+                String trekTransportation, String nearbyActivities, String trekCost, String trekLength,
+                String trekReviews, TrekType trekType) {
         this.region = region;
         this.continent = continent;
         this.name = name;
-        this.description = description;
-//        this.trekGuidedOrNot = trekGuidedOrNot;
-//        this.trekLandmarks = trekLandmarks;
-//        this.trekCampsiteInfo = trekCampsiteInfo;
-//        this.trekTransportation = trekTransportation;
-//        this.nearbyActivities = nearbyActivities;
-//        this.trekCost = trekCost;
-//        this.trekLength = trekLength;
-//        this.trekReviews = trekReviews;
-//        this.trekType = trekType;
+        this.trekDescription = trekDescription;
+        this.trekGuidedOrNot = trekGuidedOrNot;
+        this.trekLandmarks = trekLandmarks;
+        this.trekCampsiteInfo = trekCampsiteInfo;
+        this.trekTransportation = trekTransportation;
+        this.nearbyActivities = nearbyActivities;
+        this.trekCost = trekCost;
+        this.trekLength = trekLength;
+        this.trekReviews = trekReviews;
+        this.trekType = trekType;
     }
 
     @Override

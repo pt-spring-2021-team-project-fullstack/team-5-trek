@@ -21,9 +21,10 @@ public class ContinentController {
         return "continentsView";
     }
 
-    @RequestMapping("/continent")///{nameOfContinent}")
-    public String displaySingleContinent(@RequestParam (value = "id") Long id, Model model) {
-        model.addAttribute("continent", continentRepo.findById(id));
+    @GetMapping("/continent")
+    public String displaySingleContinent(@PathVariable String name, Model model) {
+        Continent retrievedContinent = continentRepo.findByName(name);
+        model.addAttribute("continent", retrievedContinent);
         return "continentView";
     }
 }

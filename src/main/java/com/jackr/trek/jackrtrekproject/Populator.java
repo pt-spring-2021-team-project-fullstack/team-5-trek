@@ -23,10 +23,14 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        TrekType easy = new TrekType("easy", "description here");
-        TrekType moderate = new TrekType("moderate", "description here");
-        TrekType strenuous = new TrekType("strenuous", "description here");
-        TrekType difficult = new TrekType("difficult", "description here");
+        TrekType easy = new TrekType("easy", "continent here", "region here", "description of trek type",
+                "difficulty level", "physical requirements", "trek tips here", "terrain info here");
+        TrekType moderate = new TrekType("moderate", "continent here", "region here", "description of trek type",
+                "difficulty level", "physical requirements", "trek tips here", "terrain info here");
+        TrekType strenuous = new TrekType("strenuous", "continent here", "region here", "description of trek type",
+                "difficulty level", "physical requirements", "trek tips here", "terrain info here");
+        TrekType difficult = new TrekType("difficult", "continent here", "region here", "description of trek type",
+                "difficulty level", "physical requirements", "trek tips here", "terrain info here");
         trekTypeRepo.save(easy);
         trekTypeRepo.save(moderate);
         trekTypeRepo.save(strenuous);
@@ -116,10 +120,11 @@ public class Populator implements CommandLineRunner {
         regionRepo.save(rossSea);
 
         //we will eventually include all the treks here and trek1 will be renamed to the actual trek name
-        Trek trek1 = new Trek(mountainousWest, northAmerica, "easy", "description");
-        Trek trek2 = new Trek(rossSea, antarctica, "difficult", "description");
+        Trek trek1 = new Trek(mountainousWest, northAmerica, "easy", "description",
+        false, "", "", "", "", "",
+                "", "", easy);
 
         trekRepo.save(trek1);
-        trekRepo.save(trek2);
+
     }
 }
