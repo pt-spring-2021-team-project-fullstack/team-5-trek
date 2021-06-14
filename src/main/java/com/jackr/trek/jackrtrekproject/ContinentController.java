@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.Optional;
 
 @Controller
 public class ContinentController {
@@ -17,14 +18,14 @@ public class ContinentController {
 
     @RequestMapping("/continents")
     public String displayContinents(Model model) {
-        model.addAttribute("continents", continentRepo.findAll());
+        model.addAttribute("continentsModel", continentRepo.findAll());
         return "continentsView";
     }
 
     @GetMapping("/continent")
     public String displaySingleContinent(@PathVariable String name, Model model) {
-        Continent retrievedContinent = continentRepo.findByName(name);
-        model.addAttribute("continent", retrievedContinent);
+        Optional<Continent> retrievedContinent = continentRepo.findByName(name);
+        model.addAttribute("continentModel", retrievedContinent.get());
         return "continentView";
     }
 }

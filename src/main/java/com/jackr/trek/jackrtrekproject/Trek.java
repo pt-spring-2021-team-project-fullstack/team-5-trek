@@ -29,14 +29,12 @@ public class Trek {
 //    private Collection<Region> regions;
 
     @ManyToOne
-    @JoinColumn(name = "region_id")
     private Region region;
 
 //    @ManyToOne
 //    private Collection<Continent> continents;
 
     @ManyToOne
-    @JoinColumn(name = "continent_id")
     private Continent continent;
 
     public Long getId() {

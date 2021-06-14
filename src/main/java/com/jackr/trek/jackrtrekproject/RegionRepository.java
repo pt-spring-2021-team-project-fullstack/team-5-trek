@@ -6,6 +6,8 @@ import java.util.Optional;
 
 public interface RegionRepository extends CrudRepository<Region, Long> {
 
-    Region findById(long id);
+    Optional<Region> findById(long id);
+
+
 
 }
