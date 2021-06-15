@@ -13,7 +13,7 @@ public class Trek {
     @GeneratedValue
     private Long id;
 
-    private String name;
+    private String trekName;
     private String description;
     private boolean guidedOrNot;
     private String landmarks;
@@ -39,8 +39,8 @@ public class Trek {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getTrekName() {
+        return trekName;
     }
 
     public String getDescription() {
@@ -91,10 +91,10 @@ public class Trek {
         return region;
     }
 
-    public Trek(String name, TrekType difficultyLevel, Continent continent, Region region, String description,
+    public Trek(String trekName, TrekType difficultyLevel, Continent continent, Region region, String description,
                 boolean guidedOrNot, String landmarks, String campsiteInfo, String transportation, String nearbyActivities,
                 String cost, String length, String reviews) {
-        this.name = name;
+        this.trekName = trekName;
         this.difficultyLevel = difficultyLevel;
         this.continent = continent;
         this.region = region;

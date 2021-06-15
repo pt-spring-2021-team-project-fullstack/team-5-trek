@@ -10,5 +10,5 @@ public interface TrekRepository extends CrudRepository<Trek, Long> {
 
 //    Trek findById(long id);
 //
-//    Optional<Trek> findByTrekName(String trekName);
+    Optional<Trek> findByTrekName(String name);
 }

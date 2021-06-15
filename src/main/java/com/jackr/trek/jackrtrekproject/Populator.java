@@ -116,7 +116,7 @@ public class Populator implements CommandLineRunner {
         regionRepo.save(rossSea);
 
         //we will eventually include all the treks here and trek1 will be renamed to the actual trek name
-        Trek trek1 = new Trek("", easy, antarctica, rossSea, "", true, "",
+        Trek trek1 = new Trek("Trek name here", easy, antarctica, rossSea, "", true, "",
                 "", "", "", "", "", "");
 
         trekRepo.save(trek1);
