@@ -24,14 +24,8 @@ public class Trek {
     @ManyToOne
     private TrekType trekType;
 
-//    @ManyToOne
-//    private Collection<Region> regions;
-
     @ManyToOne
     private Region region;
-
-//    @ManyToOne
-//    private Collection<Continent> continents;
 
     @ManyToOne
     private Continent continent;
