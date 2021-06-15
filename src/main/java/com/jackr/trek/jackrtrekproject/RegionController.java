@@ -17,7 +17,7 @@ public class RegionController {
 
     @RequestMapping("/regions")
     public String displayRegions(Model model) {
-        model.addAttribute("regions",regionRepo.findAll());
+        model.addAttribute("regionsModel",regionRepo.findAll());
         return "regionsView";
     }
 
