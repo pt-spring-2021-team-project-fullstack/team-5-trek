@@ -21,13 +21,14 @@ public class RegionController {
         return "regionsView";
     }
 
-//    @GetMapping("/regions/{nameOfRegion}")
-//    public String displaySingleRegion(@PathVariable String nameOfRegion, Model model){
-//        Optional<Region> retrievedRegion = regionRepo.findByRegion(nameOfRegion);
-//        model.addAttribute("region",retrievedRegion);
-//        return "regionView";
-//
-//    }
+    @GetMapping("/regions/{regionName}")
+    public String displaySingleRegion(@PathVariable String regionName, Model model){
+        Optional<Region> retrievedRegion = regionRepo.findByRegionName(regionName);
+        model.addAttribute("region",retrievedRegion.get());
+        return "regionView";
+
+    }
+
 
 //    @RequestMapping("/regions")
 //    public String displayRegions(Model model) {

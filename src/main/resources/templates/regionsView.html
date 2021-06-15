@@ -5,10 +5,16 @@
     <title>Treks By Region</title>
 </head>
 <body>
-<div th:each="region:${regionsModel}" >
-    <p th:text="${region.regionName} " ></p>
-</div>
 
+<!--<div th:each="region:${regionsModel}" >-->
+<!--    <p th:text="${region.regionName} " ></p>-->
+<!--</div>-->
+
+<div th:each="region:${regionsModel}" >
+    <a th:href="@{'/regions/'+ ${regionName}}"
+       th:text="${region.regionName} ">Region</a>
+
+</div>
 
 </body>
 </html>
