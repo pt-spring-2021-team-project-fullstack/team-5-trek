@@ -1,100 +1,120 @@
 package com.jackr.trek.jackrtrekproject;
 
-import javax.persistence.*;
-import java.util.Collection;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.util.Objects;
 
 @Entity
 public class Trek {
+
     @Id
     @GeneratedValue
     private Long id;
 
-    private String trekDescription;
-    private boolean trekGuidedOrNot;
-    private String trekLandmarks;
-    private String trekCampsiteInfo;
-    private String trekTransportation;
+    private String name;
+    private String description;
+    private boolean guidedOrNot;
+    private String landmarks;
+    private String campsiteInfo;
+    private String transportation;
     private String nearbyActivities;
-    private String trekCost;
-    private String trekLength;
-    private String trekReviews;
+    private String cost;
+    private String length;
+    private String reviews;
 
     @ManyToOne
-    private TrekType trekType;
+    private TrekType difficultyLevel;
 
     @ManyToOne
-    private Collection<Region> regions;
+    private Continent continent;
 
     @ManyToOne
-    private Collection<Continent> continents;
+    private Region region;
+
+    public Trek() {}
 
     public Long getId() {
         return id;
     }
 
-    public String getTrekDescription() {
-        return trekDescription;
+    public String getName() {
+        return name;
     }
 
-    public boolean getGuideInfo() {
-        return trekGuidedOrNot;
+    public String getDescription() {
+        return description;
     }
 
-    public String getTrekLandmarks() {
-        return trekLandmarks;
+    public boolean isGuidedOrNot() {
+        return guidedOrNot;
     }
 
-    public String getTrekCampsiteInfo() {
-        return trekCampsiteInfo;
+    public String getLandmarks() {
+        return landmarks;
     }
 
-    public String getTrekTransportation() {
-        return trekTransportation;
+    public String getCampsiteInfo() {
+        return campsiteInfo;
+    }
+
+    public String getTransportation() {
+        return transportation;
     }
 
     public String getNearbyActivities() {
         return nearbyActivities;
     }
 
-    public String getTrekCost() {
-        return trekCost;
+    public String getCost() {
+        return cost;
     }
 
-    public String getTrekLength() {
-        return trekLength;
+    public String getLength() {
+        return length;
     }
 
-    public String getTrekReviews() {
-        return trekReviews;
+    public String getReviews() {
+        return reviews;
     }
 
-    public TrekType getTrekType() {
-        return trekType;
+    public TrekType getDifficultyLevel() {
+        return difficultyLevel;
     }
 
-    public Trek(String trekDescription, boolean trekGuidedOrNot, String trekLandmarks, String trekCampsiteInfo,
-                String trekTransportation, String nearbyActivities, String trekCost, String trekLength,
-                String trekReviews, TrekType trekType) {
-        this.trekDescription = trekDescription;
-        this.trekGuidedOrNot = trekGuidedOrNot;
-        this.trekLandmarks = trekLandmarks;
-        this.trekCampsiteInfo = trekCampsiteInfo;
-        this.trekTransportation = trekTransportation;
+    public Continent getContinent() {
+        return continent;
+    }
+
+    public Region getRegion() {
+        return region;
+    }
+
+    public Trek(String name, TrekType difficultyLevel, Continent continent, Region region, String description,
+                boolean guidedOrNot, String landmarks, String campsiteInfo, String transportation, String nearbyActivities,
+                String cost, String length, String reviews) {
+        this.name = name;
+        this.difficultyLevel = difficultyLevel;
+        this.continent = continent;
+        this.region = region;
+        this.description = description;
+        this.guidedOrNot = guidedOrNot;
+        this.landmarks = landmarks;
+        this.campsiteInfo = campsiteInfo;
+        this.transportation = transportation;
         this.nearbyActivities = nearbyActivities;
-        this.trekCost = trekCost;
-        this.trekLength = trekLength;
-        this.trekReviews = trekReviews;
-        this.trekType = trekType;
+        this.cost = cost;
+        this.length = length;
+        this.reviews = reviews;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Trek that = (Trek) o;
-        return Objects.equals(id, that.id);
+        Trek trek = (Trek) o;
+        return Objects.equals(id, trek.id);
     }
 
     @Override

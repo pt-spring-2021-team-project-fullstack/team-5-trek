@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ContinentRepository extends CrudRepository<Continent, Long> {
 
-    Continent findByContinent(String Continent);
+//    Continent findByContinent(String Continent);
 
 }

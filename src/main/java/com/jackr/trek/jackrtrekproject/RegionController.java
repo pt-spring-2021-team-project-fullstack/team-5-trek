@@ -21,12 +21,12 @@ public class RegionController {
         return "regionsView";
     }
 
-    @GetMapping("/regions/{nameOfRegion}")
-    public String displaySingleRegion(@PathVariable String nameOfRegion, Model model){
-        Optional<Region> retrievedRegion = regionRepo.findByRegion(nameOfRegion);
-        model.addAttribute("region",retrievedRegion);
-        return "regionView";
-
-    }
+//    @GetMapping("/regions/{nameOfRegion}")
+//    public String displaySingleRegion(@PathVariable String nameOfRegion, Model model){
+//        Optional<Region> retrievedRegion = regionRepo.findByRegion(nameOfRegion);
+//        model.addAttribute("region",retrievedRegion);
+//        return "regionView";
+//
+//    }
 
 }

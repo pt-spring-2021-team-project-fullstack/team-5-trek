@@ -20,10 +20,10 @@ public class ContinentController {
         return "continentsView";
     }
 
-    @GetMapping("/continent/{nameOfContinent}")
-    public String displaySingleContinent(@PathVariable String nameOfContinent, Model model) {
-        Continent retrievedContinent = continentRepo.findByContinent(nameOfContinent);
-        model.addAttribute("continent", retrievedContinent);
-        return "continentView";
-    }
+//    @GetMapping("/continents/{name}")
+//    public String displaySingleContinent(@PathVariable String name, Model model) {
+//        Continent retrievedContinent = continentRepo.findByContinent(name);
+//        model.addAttribute("continent", retrievedContinent);
+//        return "continentView";
+//    }
 }
