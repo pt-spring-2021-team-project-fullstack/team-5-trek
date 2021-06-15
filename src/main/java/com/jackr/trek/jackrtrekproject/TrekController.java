@@ -27,4 +27,17 @@ public class TrekController {
         model.addAttribute("trek", foundTrek);
         return "trekView";
     }
+
+//    @RequestMapping("/treks")
+//    public String displayTreks(Model model) {
+//        model.addAttribute("trekModel", trekRepo.findAll());
+//        return "trekView";
+//    }
+
+//    @GetMapping("/trek-types/{trekType}")
+//    public String displayTrekType(@PathVariable String trekType, Model model) {
+//        Optional<TrekType> retrievedTrekType = trekTypeRepo.findByTrekTypePerContinent(trekType);
+//        model.addAttribute("trekTypeModel", retrievedTrekType.get());
+//        return "trekTypeView";
+//    }
 }

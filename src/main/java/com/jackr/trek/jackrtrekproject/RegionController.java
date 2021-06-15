@@ -29,4 +29,18 @@ public class RegionController {
 //
 //    }
 
+//    @RequestMapping("/regions")
+//    public String displayRegions(Model model) {
+//        model.addAttribute("regionsModel",regionRepo.findAll());
+//        return "regionsView";
+//    }
+
+//    @GetMapping("/region")
+//    public String displaySingleRegion(@PathVariable String nameOfRegion, Model model){
+//        Optional<Region> retrievedRegion = regionRepo.findByNameOfRegion(nameOfRegion);
+//        model.addAttribute("regionModel",retrievedRegion.get());
+//        return "regionView";
+//
+//    }
+
 }

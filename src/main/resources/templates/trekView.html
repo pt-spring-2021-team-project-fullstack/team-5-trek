@@ -2,11 +2,25 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Trek</title>
+    <title>Title</title>
 </head>
 <body>
 
-<h1>Trek View</h1>
+<h1>TrekView</h1>
+
+<div th:each="trek: ${trekModel}">
+    <p th:text=" 'Trek Name: ' + ${trek.trekName}"></p>
+    <p th:text=" 'Trek Type: ' + ${trek.trekType.trekType}"></p>
+    <p th:text=" 'Description: ' + ${trek.trekDescription}"></p>
+    <p th:text=" 'Guided: ' + ${trek.trekGuidedOrNot}"></p>
+    <p th:text=" 'Landmarks: ' + ${trek.trekLandmarks}"></p>
+    <p th:text=" 'Campsite Info: ' + ${trek.trekCampsiteInfo}"></p>
+    <p th:text=" 'Transportation: ' + ${trek.trekTransportation}"></p>
+    <p th:text=" 'Nearby Activities: ' + ${trek.nearbyActivities}"></p>
+    <p th:text=" 'Cost: ' + ${trek.trekCost}"></p>
+    <p th:text=" 'Length: ' + ${trek.trekLength}"></p>
+    <p th:text=" 'Reviews: ' + ${trek.trekReviews}"></p>
+</div>
 
 </body>
 </html>

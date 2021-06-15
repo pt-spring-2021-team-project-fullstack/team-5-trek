@@ -19,6 +19,9 @@ public class Region {
     @OneToMany(mappedBy = "region")
     private Collection<Trek> treks;
 
+//    @ManyToOne
+//    private Continent continent;
+
     public Long getId() {
         return id;
     }
@@ -31,11 +34,20 @@ public class Region {
         return treks;
     }
 
-    public Region() {}
+//    public Continent getContinent() {
+//        return continent;
+//    }
+
+    protected Region() {}
 
     public Region(String regionName) {
         this.regionName = regionName;
     }
+
+//    public Region(String nameOfRegion, Continent continent) {
+//        this.nameOfRegion = nameOfRegion;
+//        this.continent = continent;
+//    }
 
     @Override
     public boolean equals(Object o) {

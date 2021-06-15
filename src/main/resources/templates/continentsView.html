@@ -2,9 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Continents</title>
+    <title>Treks By Continent</title>
 </head>
 <body>
-    <h2>Continents View</h2>
+<div th:each="continent:${continentsModel}" >
+    <p th:text="${continent.name} " ></p>
+</div>
+
 </body>
 </html>

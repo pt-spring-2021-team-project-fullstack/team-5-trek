@@ -8,4 +8,8 @@ public interface RegionRepository extends CrudRepository<Region, Long> {
 
 //    Optional<Region> findByRegion(String region);
 
+//    Region findById(long id);
+//
+//    Optional<Region> findByNameOfRegion(String nameOfRegion);
+
 }

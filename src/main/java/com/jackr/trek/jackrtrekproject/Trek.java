@@ -33,7 +33,7 @@ public class Trek {
     @ManyToOne
     private Region region;
 
-    public Trek() {}
+    protected Trek() {}
 
     public Long getId() {
         return id;

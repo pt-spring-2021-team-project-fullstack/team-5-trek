@@ -68,15 +68,15 @@ public class WebLayerTest {
                 .andExpect(model().attributeExists("regions"));
     }
 
-    @Test
-    public void shouldBeOkForASingleTrekTypeEndpointWithTrekTypeViewAndTrekTypeModelAttribute() throws Exception {
-        TrekType testTrekType = new TrekType("Easy");
-        when(trekTypeRepo.findTrekTypeByDifficultyLevel("Easy")).thenReturn(testTrekType);
-        mockMvc.perform(get("/trek-types/Easy"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("trekTypeView"))
-                .andExpect(model().attributeExists("trek-type"));
-    }
+//    @Test
+//    public void shouldBeOkForASingleTrekTypeEndpointWithTrekTypeViewAndTrekTypeModelAttribute() throws Exception {
+//        TrekType testTrekType = new TrekType("Easy");
+//        when(trekTypeRepo.findTrekTypeByDifficultyLevel("Easy")).thenReturn(testTrekType);
+//        mockMvc.perform(get("/trek-types/Easy"))
+//                .andExpect(status().isOk())
+//                .andExpect(view().name("trekTypeView"))
+//                .andExpect(model().attributeExists("trek-type"));
+//    }
 
     @Test
     public void shouldBeOkForASingleTrekEndpointWithTrekViewAndTrekModelAttribute() throws Exception {

@@ -2,9 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Regions</title>
+    <title>Treks By Region</title>
 </head>
 <body>
-<h1>Regions View</h1>
+<div th:each="region:${regionsModel}" >
+    <p th:text="${region.nameOfRegion} " ></p>
+</div>
+
 </body>
 </html>
