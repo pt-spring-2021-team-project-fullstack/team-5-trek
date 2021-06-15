@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Treks By Continent</title>
 </head>
 <body>
-<div th:each="continent:${continentsModel}" >
-    <p th:text="${continent.name} " ></p>
-</div>
+<h1>Continents We Trek On:</h1>
+<h2 th:each="continent:${continentsModel}">
+    <p th:text="${continent.id}"></p>
+</h2>
 
 </body>
 </html>

@@ -41,7 +41,6 @@ public class Continent {
     protected Continent() {}
 
     public Continent(String name) {
-
         this.name = name;
     }
 

@@ -8,8 +8,8 @@ public interface ContinentRepository extends CrudRepository<Continent, Long> {
 
 //    Continent findByContinent(String Continent);
 
-//    Continent findById(long Id);
-//
-//    Optional<Continent> findByName(String name);
+    Continent findById(long Id);
+
+    Continent findContinentByName(String name);
 
 }
