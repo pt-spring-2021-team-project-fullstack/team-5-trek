@@ -1,3 +1,4 @@
+
 package com.jackr.trek.jackrtrekproject;
 
 import org.springframework.data.repository.CrudRepository;
@@ -8,8 +9,8 @@ public interface ContinentRepository extends CrudRepository<Continent, Long> {
 
 //    Continent findByContinent(String Continent);
 
-//    Continent findById(long Id);
+    //    Continent findById(long Id);
 //
-//    Optional<Continent> findByName(String name);
+    Optional<Continent> findByName(String name);
 
 }

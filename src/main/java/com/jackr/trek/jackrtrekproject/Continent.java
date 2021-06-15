@@ -26,7 +26,11 @@ public class Continent {
         return id;
     }
 
-    public String getContinentName() {
+//    public String getContinentName() {
+//        return name;
+//    }
+
+    public String getName() {
         return name;
     }
 

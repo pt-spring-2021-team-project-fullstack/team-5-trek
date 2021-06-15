@@ -5,8 +5,10 @@
     <title>Treks By Continent</title>
 </head>
 <body>
-<div th:each="continent:${continentsModel}" >
-    <p th:text="${continent.name} " ></p>
+<h1>Continents We Trek To:</h1>
+<div th:each="continent:${continents}" >
+    <a th:href="@{'/continents/'+ ${continent.name}}"
+       th:text="${continent.name} ">Continent</a>
 </div>
 
 </body>
