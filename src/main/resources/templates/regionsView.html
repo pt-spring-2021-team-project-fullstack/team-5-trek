@@ -2,19 +2,45 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style-continents-view.css">
     <title>Treks By Region</title>
 </head>
-<body>
+<body class="body">
+<main>
+    <header class="header">
+        <h1 class="JacKr__name"><strong>JacKr Enterprises</strong></h1>
+
+        <nav class="header__nav">
+            <div class="header__nav__list">
+                <a class="header__nav__listItem" href="/landing-page.html">
+                    <button>Home</button>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <img src="images/mystical-woods.jpg" alt="cool looking trail in woods" class="hero__image">
+
+    </section>
+
+    <h1 class="content-title">Regions We Trek To:</h1>
+
 
 <!--<div th:each="region:${regionsModel}" >-->
 <!--    <p th:text="${region.regionName} " ></p>-->
 <!--</div>-->
-
+    <div class="container-1">
 <div th:each="region:${regionsModel}" >
     <a th:href="@{'/regions/'+ ${regionName}}"
        th:text="${region.regionName} ">Region</a>
-
+    </div>
 </div>
 
+    <footer>
+        <p>©Jackr Enterprises 2021</p>
+    </footer>
+
+</main>
 </body>
 </html>

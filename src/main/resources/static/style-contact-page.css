@@ -9,6 +9,11 @@ html {
     line-height: 1.618em;
 }
 
+.body {
+    background-color:rgb(231, 240, 231);
+  
+}
+
 .JacKr__name {
     font: 48px sans-serif;
     font-family: 'Times New Roman', Times, serif;
@@ -21,21 +26,23 @@ html {
     justify-content: space-between;
 }
 
-.header__nav__list {
-    display: flex;  
-}
-
 .header__nav__listItem {
-    background-color: lightsteelblue;
-    list-style-type: none;
-    margin: 6px;
-    margin-right: 2rem;
+    color:#222;
+    padding: .5em 1em;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+    height: 50px;
+    background-color:rgb(216, 219, 216);
+    box-shadow: inset 0 0 0 0 rgb(4, 105, 4);
+    transition: ease-out 0.3s;
+    font-size: 1rem;
+    outline: none;
 }
 
 .header__nav__listItem:hover {
-    background-color: rgb(131, 131, 146);
-    font: bold;
-    transition: .5s;
+    box-shadow: inset 300px 0 0 0 rgb(4, 105, 4);
 }
 
 .hero__image {
