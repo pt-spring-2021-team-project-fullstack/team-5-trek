@@ -9,4 +9,5 @@ public class JackrTrekProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JackrTrekProjectApplication.class, args);
 	}
+
 }
