@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Treks</title>
+</head>
+<body>
+<h1>Treks View</h1>
+<div th:each="trek:${treks}">
+    <a th:href="@{'/treks/'+ ${trek.trekName}}"
+       th:text="${trek.trekName} ">Trek</a>
+</div>
+</body>
+</html>
