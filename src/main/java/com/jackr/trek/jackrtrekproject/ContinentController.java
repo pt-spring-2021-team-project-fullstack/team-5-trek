@@ -15,6 +15,15 @@ public class ContinentController {
     @Resource
     private ContinentRepository continentRepo;
 
+    @Resource
+    private RegionRepository regionRepo;
+
+    @Resource
+    private TrekRepository trekRepo;
+
+    @Resource
+    private TrekTypeRepository trekTypeRepo;
+
     @RequestMapping("/continents")
     public String displayContinents(Model model) {
         model.addAttribute("continents", continentRepo.findAll());
@@ -39,6 +48,12 @@ public class ContinentController {
     public String displaySingleContinent(@PathVariable String name, Model model) {
         Optional<Continent> retrievedContinent = continentRepo.findByName(name);
         model.addAttribute("continent", retrievedContinent.get());
+        return "continentView";
+    }
+
+    @RequestMapping("/continents/{name}")
+    public String displayContinentRegions(Model model) {
+        model.addAttribute("continent_id", regionRepo.findAll());
         return "continentView";
     }
 }

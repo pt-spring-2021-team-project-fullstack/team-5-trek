@@ -15,6 +15,15 @@ public class RegionController {
     @Resource
     private RegionRepository regionRepo;
 
+    @Resource
+    private ContinentRepository continentRepo;
+
+    @Resource
+    private TrekRepository trekRepo;
+
+    @Resource
+    private TrekTypeRepository trekTypeRepo;
+
     @RequestMapping("/regions")
     public String displayRegions(Model model) {
         model.addAttribute("regionsModel",regionRepo.findAll());
