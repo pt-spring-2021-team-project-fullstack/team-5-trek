@@ -9,12 +9,6 @@ import javax.annotation.Resource;
 public class Populator implements CommandLineRunner {
 
     @Resource
-    private TrekRepository trekRepo;
-
-    @Resource
-    private TrekTypeRepository trekTypeRepo;
-
-    @Resource
     private ContinentRepository continentRepo;
 
     @Resource
@@ -23,22 +17,13 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        TrekType easy = new TrekType("Easy");
-        TrekType moderate = new TrekType("Moderate");
-        TrekType strenuous = new TrekType("Strenuous");
-        TrekType difficult = new TrekType("Difficult");
-        trekTypeRepo.save(easy);
-        trekTypeRepo.save(moderate);
-        trekTypeRepo.save(strenuous);
-        trekTypeRepo.save(difficult);
-
-        Continent northAmerica = new Continent("North America");
-        Continent southAmerica = new Continent("South America");
-        Continent africa = new Continent("Africa");
-        Continent europe = new Continent("Europe");
-        Continent asia = new Continent("Asia");
-        Continent australia = new Continent("Australia");
-        Continent antarctica = new Continent("Antarctica");
+        Continent northAmerica = new Continent("North America", 1L);
+        Continent southAmerica = new Continent("South America", 2L);
+        Continent africa = new Continent("Africa", 3L);
+        Continent europe = new Continent("Europe",4L);
+        Continent asia = new Continent("Asia", 5L);
+        Continent australia = new Continent("Australia", 6L);
+        Continent antarctica = new Continent("Antarctica", 7L);
         continentRepo.save(northAmerica);
         continentRepo.save(southAmerica);
         continentRepo.save(africa);
@@ -47,39 +32,39 @@ public class Populator implements CommandLineRunner {
         continentRepo.save(australia);
         continentRepo.save(antarctica);
 
-        Region mountainousWest = new Region("Mountainous West");
-        Region greatPlains = new Region("Great Plains");
-        Region canadianShield = new Region("Canadian Shield");
-        Region variedEasternRegion = new Region("Varied Eastern Region");
-        Region caribbean = new Region("Caribbean");
-        Region mountainsAndHighlands = new Region("Mountains and Highlands");
-        Region riverBasins = new Region("River Basins");
-        Region coastalPlains = new Region("Coastal Plains");
-        Region sahara = new Region("Sahara");
-        Region sahel = new Region("Sahel");
-        Region ethiopianHighlands = new Region("Ethiopian Highlands");
-        Region savanna = new Region("Savanna");
-        Region swahiliCoast = new Region("Swahili Coast");
-        Region rainForest = new Region("Rain Forest");
-        Region africanGreatLakes = new Region("African Great Lakes");
-        Region southernAfrica = new Region("Southern Africa");
-        Region westernUplands = new Region("Western Uplands");
-        Region northEuropeanPlain = new Region("North European Plain");
-        Region centralUplands = new Region("Central Uplands");
-        Region alpineMountains = new Region("Alpine Mountains");
-        Region mountainSystems = new Region("Mountain Systems");
-        Region plateaus = new Region("Plateaus");
-        Region plainsSteppesAndDeserts = new Region("Plains, Steppes, and Deserts");
-        Region freshwaterEnvironments = new Region("Freshwater Environments");
-        Region saltwaterEnvironments = new Region("Saltwater Environments");
-        Region continentalIslands = new Region("Continental Islands");
-        Region highIslands = new Region("High Islands");
-        Region lowIslands = new Region("Low Islands");
-        Region antarcticPeninsula = new Region("Antarctic Peninsula");
-        Region eastAntarctica = new Region("East Antarctica");
-        Region southPole = new Region("South Pole");
-        Region westAntarctica = new Region("West Antarctica");
-        Region rossSea = new Region("Ross Sea");
+        Region mountainousWest = new Region("Mountainous West", northAmerica, 1L);
+        Region greatPlains = new Region("Great Plains", northAmerica, 1L);
+        Region canadianShield = new Region("Canadian Shield", northAmerica, 1L);
+        Region variedEasternRegion = new Region("Varied Eastern Region", northAmerica, 1L);
+        Region caribbean = new Region("Caribbean", northAmerica, 1L);
+        Region mountainsAndHighlands = new Region("Mountains and Highlands", southAmerica,2L);
+        Region riverBasins = new Region("River Basins", southAmerica, 2L);
+        Region coastalPlains = new Region("Coastal Plains", southAmerica,2L);
+        Region sahara = new Region("Sahara", africa, 3L);
+        Region sahel = new Region("Sahel", africa,3L);
+        Region ethiopianHighlands = new Region("Ethiopian Highlands", africa,3L);
+        Region savanna = new Region("Savanna", africa,3L);
+        Region swahiliCoast = new Region("Swahili Coast", africa,3L);
+        Region rainForest = new Region("Rain Forest", africa,3L);
+        Region africanGreatLakes = new Region("African Great Lakes", africa,3L);
+        Region southernAfrica = new Region("Southern Africa", africa,3L);
+        Region westernUplands = new Region("Western Uplands", europe,4L);
+        Region northEuropeanPlain = new Region("North European Plain", europe,4L);
+        Region centralUplands = new Region("Central Uplands", europe,4L);
+        Region alpineMountains = new Region("Alpine Mountains", europe,4L);
+        Region mountainSystems = new Region("Mountain Systems", asia,5L);
+        Region plateaus = new Region("Plateaus", asia,5L);
+        Region plainsSteppesAndDeserts = new Region("Plains, Steppes, and Deserts", asia,5L);
+        Region freshwaterEnvironments = new Region("Freshwater Environments", asia,5L);
+        Region saltwaterEnvironments = new Region("Saltwater Environments", asia,5L);
+        Region continentalIslands = new Region("Continental Islands", australia,6L);
+        Region highIslands = new Region("High Islands", australia,6L);
+        Region lowIslands = new Region("Low Islands", australia,6L);
+        Region antarcticPeninsula = new Region("Antarctic Peninsula", antarctica,7L);
+        Region eastAntarctica = new Region("East Antarctica", antarctica,7L);
+        Region southPole = new Region("South Pole", antarctica,7L);
+        Region westAntarctica = new Region("West Antarctica", antarctica,7L);
+        Region rossSea = new Region("Ross Sea", antarctica,7L);
 
         regionRepo.save(mountainousWest);
         regionRepo.save(greatPlains);
@@ -115,17 +100,5 @@ public class Populator implements CommandLineRunner {
         regionRepo.save(westAntarctica);
         regionRepo.save(rossSea);
 
-        //we will eventually include all the treks here
-        Trek trek1 = new Trek("Sahara Desert Trek", difficult, africa, sahara, "Rediscover true " +
-                "adventure in the awe-inspiring Sahara Desert. This eight day trek covers 100km passing through Morocco’s" +
-                " forbidding landscape punctuated by peaks, gorges, dunes and oases.", true, "Climb " +
-                "Jebel Lamrakeb for incredible views of the region. On day 5, camp lies at the bottom of the Bouzaine dunes, " +
-                "home to some of the biggest dunes in the region and perfect for a photo or two.",
-                "Camping with very basic facilities", "Foot", "Visit Saghro, a volcanic" +
-                " massif before reaching Mecissi", "A minimum of  $1617.64 donated to your nominated charity",
-                "8 days", "This trek is challenging, unforgiving, and life-changing. Prepare for very hot " +
-                "days and cold nights. The terrain is rocky and sandy.");
-
-        trekRepo.save(trek1);
     }
 }

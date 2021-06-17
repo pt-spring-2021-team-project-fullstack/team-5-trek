@@ -17,36 +17,33 @@ public class Continent {
     private String name;
 
     @OneToMany(mappedBy = "continent")
-    private Collection<Trek> treks;
+    private Collection<Region> regions;
 
-//    @OneToMany(mappedBy = "continent")
-//    private Collection<Region> regions;
+
+
+    private Long regionIdentifier;
 
     public Long getId() {
         return id;
     }
 
-//    public String getContinentName() {
-//        return name;
-//    }
-
     public String getName() {
         return name;
     }
 
-    public Collection<Trek> getTreks() {
-        return treks;
+    public Long getRegionIdentifier() {
+        return regionIdentifier;
     }
 
-//    public Collection<Region> getRegions(){
-//        return regions;
-//    }
+    public Collection<Region> getRegions(){
+        return regions;
+    }
 
     protected Continent() {}
 
-    public Continent(String name) {
-
+    public Continent(String name, Long regionIdentifier) {
         this.name = name;
+        this.regionIdentifier = regionIdentifier;
     }
 
     @Override

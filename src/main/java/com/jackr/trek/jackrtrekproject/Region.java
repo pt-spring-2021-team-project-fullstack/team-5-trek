@@ -1,10 +1,6 @@
 package com.jackr.trek.jackrtrekproject;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.Collection;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -16,11 +12,11 @@ public class Region {
 
     private String regionName;
 
-    @OneToMany(mappedBy = "region")
-    private Collection<Trek> treks;
+    @ManyToOne
+    private Continent continent;
 
-//    @ManyToOne
-//    private Continent continent;
+
+    private Long continentIdentifier;
 
     public Long getId() {
         return id;
@@ -30,24 +26,17 @@ public class Region {
         return regionName;
     }
 
-    public Collection<Trek> getTreks() {
-        return treks;
+    public Long getContinentIdentifier() {
+        return continentIdentifier;
     }
-
-//    public Continent getContinent() {
-//        return continent;
-//    }
 
     protected Region() {}
 
-    public Region(String regionName) {
+    public Region(String regionName, Continent continent, Long continentIdentifier) {
         this.regionName = regionName;
+        this.continent = continent;
+        this.continentIdentifier = continentIdentifier;
     }
-
-//    public Region(String nameOfRegion, Continent continent) {
-//        this.nameOfRegion = nameOfRegion;
-//        this.continent = continent;
-//    }
 
     @Override
     public boolean equals(Object o) {

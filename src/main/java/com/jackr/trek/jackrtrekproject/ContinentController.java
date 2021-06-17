@@ -15,30 +15,38 @@ public class ContinentController {
     @Resource
     private ContinentRepository continentRepo;
 
+    @Resource
+    private RegionRepository regionRepo;
+
     @RequestMapping("/continents")
     public String displayContinents(Model model) {
         model.addAttribute("continents", continentRepo.findAll());
         return "continentsView";
     }
 
-//    @GetMapping("/continents/{name}")
-//    public String displaySingleContinent(@PathVariable String name, Model model) {
-//        Continent retrievedContinent = continentRepo.findByContinent(name);
-//        model.addAttribute("continent", retrievedContinent);
-//        return "continentView";
-//    }
 
-
-    //    @RequestMapping("/continents")
-//    public String displayContinents(Model model) {
-//        model.addAttribute("continentsModel", continentRepo.findAll());
-//        return "continentsView";
-//    }
-//
     @GetMapping("/continents/{name}")
     public String displaySingleContinent(@PathVariable String name, Model model) {
         Optional<Continent> retrievedContinent = continentRepo.findByName(name);
         model.addAttribute("continent", retrievedContinent.get());
         return "continentView";
+    }
+
+//    @RequestMapping("/continents/{name}")
+//    public String displayRegions(Model model) {
+//        model.addAttribute("regionsModel", regionRepo.findAll());
+//        return "continentsView";
+//    }
+//
+//    @GetMapping("/continents/{name}")
+//    public String displayContinentRegions(Model model) {
+//        model.addAttribute("regionIdentifier", continentRepo.findAll());
+//        return "continentsView";
+//    }
+
+    @RequestMapping("/continents/{name}")
+    public String displayContinentRegions(Model model) {
+        model.addAttribute("regionIdentifier", regionRepo.findAll());
+        return "continentsView";
     }
 }
