@@ -115,9 +115,16 @@ public class Populator implements CommandLineRunner {
         regionRepo.save(westAntarctica);
         regionRepo.save(rossSea);
 
-        //we will eventually include all the treks here and trek1 will be renamed to the actual trek name
-        Trek trek1 = new Trek("Trek name here", easy, antarctica, rossSea, "", true, "",
-                "", "", "", "", "", "");
+        //we will eventually include all the treks here
+        Trek trek1 = new Trek("Sahara Desert Trek", difficult, africa, sahara, "Rediscover true " +
+                "adventure in the awe-inspiring Sahara Desert. This eight day trek covers 100km passing through Morocco’s" +
+                " forbidding landscape punctuated by peaks, gorges, dunes and oases.", true, "Climb " +
+                "Jebel Lamrakeb for incredible views of the region. On day 5, camp lies at the bottom of the Bouzaine dunes, " +
+                "home to some of the biggest dunes in the region and perfect for a photo or two.",
+                "Camping with very basic facilities", "Foot", "Visit Saghro, a volcanic" +
+                " massif before reaching Mecissi", "A minimum of  $1617.64 donated to your nominated charity",
+                "8 days", "This trek is challenging, unforgiving, and life-changing. Prepare for very hot " +
+                "days and cold nights. The terrain is rocky and sandy.");
 
         trekRepo.save(trek1);
     }
