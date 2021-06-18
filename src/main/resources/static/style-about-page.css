@@ -2,18 +2,132 @@
     box-sizing: border-box;
 }
 
+.home-button{
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+}
 
+.home{
+    position:relative;
+    display:inline-block;
+}
+.destination-button {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.nav-bar{
+background-color:#999;
+    text-align: center;
+    padding: 3em;
+}
+.nav-bar a{
+font-family:Arial;
+text-decoration: none;
+font-weight:bold;
+}
+
+.nav-bar a:hover {
+    background-color:MediumSeaGreen;
+}
+.destination {
+    position:relative;
+    display:inline-block;
+}
+a{
+font-family:Arial;
+text-decoration: none;
+font-weight:bold;
+color:MediumSeaGreen;
+}
+
+.destination-content {
+    display: none;
+    position: absolute;
+    background-color:#f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+}
+
+.destination-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.destination-content a:hover {background-color: MediumSeaGreen;}
+
+.destination:hover .destination-content {display: block;}
+
+.trek-button {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.treks {
+    position:relative;
+    display:inline-block;
+}
+
+.trek-content {
+    display: none;
+    position: absolute;
+    background-color:#f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.trek-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.trek-content a:hover {background-color: MediumSeaGreen;}
+
+.treks:hover .trek-content {display:block;}
+
+
+.nav-links{
+    color:#222;
+    padding: .5em 1em;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 300px;
+    height: 100px;
+    background-color:rgb(216, 219, 216);
+    transition: ease-out 0.3s;
+    font-size: 1rem;
+    outline: none;
+}
+
+.trek-content {
+    border-radius: 5%;
+}
+
+.destination-content {
+    border-radius: 5%;
+}
 html {
-    color: rgb(77, 90, 104);
+
     font: 16px sans-serif;
     font-family: 'Times New Roman', Times, serif;
     line-height: 1.618em;
 }
 
-.body {
+body {
     background-color:rgb(231, 240, 231);
-  
 }
+
+
 
 .JacKr__name {
     font: 48px sans-serif;
@@ -46,9 +160,6 @@ html {
     outline: none;
 }
 
-.header__nav__listItem:hover {
-    box-shadow: inset 300px 0 0 0 rgb(4, 105, 4);
-}
 
 .hero__image {
     height: 400px;
@@ -86,11 +197,6 @@ html {
     -moz-box-shadow: 13px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
-a:hover {
-    background-color: rgb(131, 131, 146);
-    font: bold;
-    transition: .5s;
-}
 
 .footer {
     margin-top: 3rem;

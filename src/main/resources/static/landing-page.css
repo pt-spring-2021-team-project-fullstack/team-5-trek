@@ -3,7 +3,16 @@ body {
   
 }
 
+.home-button{
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+}
 
+.home{
+    position:relative;
+    display:inline-block;
+}
 .destination-button {
     padding: 16px;
     font-size: 16px;
@@ -32,7 +41,7 @@ body {
   display: block;
 }
  
-.destination-content a:hover {background-color: #ddd;}
+.destination-content a:hover {background-color:MediumSeaGreen;}
 
 .destination:hover .destination-content {display: block;}
 
@@ -63,16 +72,26 @@ body {
   display: block;
 }
 
-.trek-content a:hover {background-color: white;}
+.trek-content a:hover {background-color:MediumSeaGreen;}
 
 .treks:hover .trek-content {display:block;}
 
+
+
 .nav-bar{
+background-color:#999;
     text-align: center;
-    background-color:rgb(21, 24, 21);
-    padding: 1em;
+    padding: 3em;
+}
+.nav-bar a{
+font-family:Arial;
+text-decoration: none;
+font-weight:bold;
 }
 
+.nav-bar a:hover {
+    background-color:MediumSeaGreen;
+}
 .nav-links{
     color:#222;
     padding: .5em 1em;
@@ -86,11 +105,9 @@ body {
     transition: ease-out 0.3s;
     font-size: 1rem;
     outline: none;
-} 
 
-.nav-links:hover {
-    box-shadow: inset 300px 0 0 0 rgb(4, 105, 4);
 }
+
 
 .trek-content {
     border-radius: 5%;
