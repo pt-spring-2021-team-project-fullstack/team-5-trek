@@ -19,8 +19,8 @@ public class Continent {
     @OneToMany(mappedBy = "continent")
     private Collection<Trek> treks;
 
-//    @OneToMany(mappedBy = "continent")
-//    private Collection<Region> regions;
+    @OneToMany(mappedBy = "continent")
+    private Collection<Region> regions;
 
     public Long getId() {
         return id;
@@ -38,9 +38,9 @@ public class Continent {
         return treks;
     }
 
-//    public Collection<Region> getRegions(){
-//        return regions;
-//    }
+    public Collection<Region> getRegions(){
+        return regions;
+    }
 
     protected Continent() {}
 

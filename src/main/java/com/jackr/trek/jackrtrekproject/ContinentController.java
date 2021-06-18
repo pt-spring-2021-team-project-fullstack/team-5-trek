@@ -41,4 +41,11 @@ public class ContinentController {
         model.addAttribute("continent", retrievedContinent.get());
         return "continentView";
     }
+
+    @GetMapping("/continents/{name}/{regionName}")
+    public String displayRegionsInContinent(@PathVariable String regionName, Model model) {
+        Optional<Continent> retrievedRegion = continentRepo.findByName(regionName);
+        model.addAttribute("continent", retrievedRegion.get());
+        return "continentView";
+    }
 }

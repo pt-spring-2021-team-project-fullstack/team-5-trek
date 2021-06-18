@@ -7,6 +7,9 @@
 <body>
 <h1>Continent View</h1>
 <h2 th:text="${continent.name}"></h2>
-<h3  ></h3>
+
+<div th:each="region:${regions}" >
+        <p th:text="${region.regionName}" ></p>
+</div>
 </body>
 </html>
