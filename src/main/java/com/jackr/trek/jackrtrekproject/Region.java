@@ -19,6 +19,9 @@ public class Region {
     @ManyToOne
     private Continent continent;
 
+    @ManyToMany(mappedBy = "regions")
+    private Collection<TrekType> trekTypes;
+
     public Long getId() {
         return id;
     }
@@ -52,6 +55,14 @@ public class Region {
         if (o == null || getClass() != o.getClass()) return false;
         Region region = (Region) o;
         return Objects.equals(id, region.id);
+    }
+
+    public Continent getContinent() {
+        return continent;
+    }
+
+    public Collection<TrekType> getTrekTypes() {
+        return trekTypes;
     }
 
     @Override

@@ -13,14 +13,14 @@ public class Continent {
 
     private String name;
 
-    @OneToMany(mappedBy = "trekDifficultyLevel")
+    @OneToMany(mappedBy = "continent")
     private Collection<Trek> treks;
 
     @OneToMany(mappedBy = "continent")
     private Collection<Region> regions;
 
-    @ManyToOne
-    private TrekType trekType;
+    @ManyToMany(mappedBy = "continents")
+    private Collection<TrekType> trekTypes;
 
     public Long getId() {
         return id;
@@ -43,6 +43,10 @@ public class Continent {
     }
 
     protected Continent() {}
+
+    public Collection<TrekType> getTrekTypes() {
+        return trekTypes;
+    }
 
     public Continent(String name) {
 
