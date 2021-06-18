@@ -9,7 +9,7 @@
 <h1>Trek Types View</h1>
 
 <div th:each="trekType: ${trekTypesModel}">
-    <a th:href="@{/trekType(id=${trekType.id})}"
+    <a th:href="@{'/trek-type/' + ${trekType.id}}"
        th:text="${trekType.trekDifficultyLevel} ">Trek</a>
 
 </div>
