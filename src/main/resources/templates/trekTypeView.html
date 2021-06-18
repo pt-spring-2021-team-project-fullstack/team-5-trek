@@ -8,9 +8,7 @@
 
 <h1>Trek Type View</h1>
 
-
-    <p th:text=" 'Trek Type Id: ' + ${trekTypeModel.id}"></p>
-    <p th:text=" 'Trek Type Difficulty Level: ' + ${trekTypeModel.difficultyLevel}"></p>
+    <p th:text=" 'Trek With Difficulty Level: ' + ${trekTypeModel.difficultyLevel}"></p>
 
 
     <div th:each="trek:${trekTypeModel.treks}">
