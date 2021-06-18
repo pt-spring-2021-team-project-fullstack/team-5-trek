@@ -15,6 +15,9 @@ public class ContinentController {
     @Resource
     private ContinentRepository continentRepo;
 
+    @Resource
+    private RegionRepository regionRepo;
+
     @RequestMapping("/continents")
     public String displayContinents(Model model) {
         model.addAttribute("continents", continentRepo.findAll());
@@ -41,4 +44,5 @@ public class ContinentController {
         model.addAttribute("continent", retrievedContinent.get());
         return "continentView";
     }
+
 }

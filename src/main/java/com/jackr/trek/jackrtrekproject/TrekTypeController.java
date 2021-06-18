@@ -3,8 +3,8 @@ package com.jackr.trek.jackrtrekproject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.Optional;
@@ -22,9 +22,10 @@ public class TrekTypeController {
     }
 
     @GetMapping("/trek-types/{id}")
-    public String displaySingleTrekType(@RequestParam(value="id") Long id, Model model) {
+    public String displaySingleTrekType(@PathVariable Long id, Model model) {
         Optional<TrekType> retrievedTrekType = trekTypeRepo.findById(id);
-        model.addAttribute("trekTypeModel", retrievedTrekType);
+
+        model.addAttribute("trekTypeModel", retrievedTrekType.get());
         return "trekTypeView";
     }
 }

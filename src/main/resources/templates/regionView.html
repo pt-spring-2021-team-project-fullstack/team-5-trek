@@ -5,7 +5,13 @@
     <title>Region</title>
 </head>
 <body>
-<h1>Region View</h1>
-<h2 th:text="${region.regionName}"></h2>
+<h1 th:text=" 'Treks In ' + ${regionModel.regionName}"></h1>
+<!--<h2 th:text="${region.regionName}"></h2>-->
+
+<div th:each="trek:${regionModel.treks}">
+    <a th:href="@{'/treks/'+ ${trek.trekName}}"
+       th:text="${trek.trekName}"></a>
+</div>
+
 </body>
 </html>
