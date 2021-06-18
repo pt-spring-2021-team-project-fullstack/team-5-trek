@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
-import java.util.Optional;
 
 @Controller
 public class TrekTypeController {
@@ -17,7 +16,7 @@ public class TrekTypeController {
 
     @RequestMapping({"/trek-types", "/", ""})
     public String displayTrekTypes(Model model) {
-        model.addAttribute("trekTypesModel", trekTypeRepo.findAll());
+        model.addAttribute("trek-types", trekTypeRepo.findAll());
         return "trekTypesView";
     }
 
@@ -26,6 +25,12 @@ public class TrekTypeController {
         Optional<TrekType> retrievedTrekType = trekTypeRepo.findById(id);
 
         model.addAttribute("trekTypeModel", retrievedTrekType.get());
+
+    @GetMapping("/trek-types/{difficultyLevel}")
+    public String displaySingleTrekType(@PathVariable String difficultyLevel, Model model) {
+        TrekType retrievedTrekType = trekTypeRepo.findTrekTypeByDifficultyLevel(difficultyLevel);
+        model.addAttribute("trek-type", retrievedTrekType);
+
         return "trekTypeView";
     }
 }

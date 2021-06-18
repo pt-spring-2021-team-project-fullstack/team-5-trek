@@ -11,4 +11,7 @@ public interface TrekTypeRepository extends CrudRepository<TrekType, Long> {
     TrekType findById(long id);
 
 //    Optional<TrekType> findByContinents(String trekType);
+
+//Optional<TrekType> findByTrekTypePerContinent(String trekTypePerContinent);
+
 }

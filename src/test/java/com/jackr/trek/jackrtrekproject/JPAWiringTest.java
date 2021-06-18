@@ -27,7 +27,6 @@ public class JPAWiringTest {
     @Autowired
     private TrekRepository trekRepo;
 
-
 //    @Test
 //    public void trekTypeShouldHaveAListOfTreks() {
 //        TrekType testTrekType = new TrekType("Test trekType");
@@ -53,6 +52,32 @@ public class JPAWiringTest {
 //        TrekType retrievedTrekType = retrievedTrekTypeOpt.get();
 //        assertThat(retrievedTrekType.getTreks()).contains(testTrek1);
 //    }
+
+    @Test
+    public void trekTypeShouldHaveAListOfTreks() {
+        TrekType testTrekType = new TrekType("Test type");
+        TrekType testTrekType2 = new TrekType("Test type2");
+        Continent testContinent1 = new Continent("Test continentName");
+        Region testRegion1 = new Region("Test regionName");
+        Trek testTrek1 = new Trek("Name", testTrekType, testContinent1, testRegion1, "Description", true, "landmarks",
+                "Campsite Info", "Transportation", "Nearby Activities", "Cost", "Length", "Reviews");
+        Trek testTrek2 = new Trek("Name", testTrekType2, testContinent1, testRegion1, "Description", true, "landmarks",
+                "Campsite Info", "Transportation", "Nearby Activities", "Cost", "Length", "Reviews");
+
+        trekTypeRepo.save(testTrekType);
+        trekTypeRepo.save(testTrekType2);
+        continentRepo.save(testContinent1);
+        regionRepo.save(testRegion1);
+        trekRepo.save(testTrek1);
+        trekRepo.save(testTrek2);
+
+        entityManager.flush();
+        entityManager.clear();
+
+        Optional<TrekType> retrievedTrekTypeOpt = trekTypeRepo.findById(testTrekType.getId());
+        TrekType retrievedTrekType = retrievedTrekTypeOpt.get();
+        assertThat(retrievedTrekType.getTreks()).contains(testTrek1);
+    }
 
 
 }
