@@ -24,7 +24,7 @@ public class RegionController {
     @GetMapping("/regions/{regionName}")
     public String displaySingleRegion(@PathVariable String regionName, Model model){
         Optional<Region> retrievedRegion = regionRepo.findByRegionName(regionName);
-        model.addAttribute("region",retrievedRegion.get());
+        model.addAttribute("regionModel",retrievedRegion.get());
         return "regionView";
 
     }
