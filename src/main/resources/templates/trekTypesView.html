@@ -20,6 +20,10 @@
     </nav>
 </header>
 
+<div th:each="trekType: ${trekTypesModel}">
+    <a th:href="@{'/trek-types/' + ${trekType.id}}"
+       th:text="${trekType.trekDifficultyLevel} ">Trek</a>
+
 <section>
     <img src="images/trek-types-pic.jpg" alt="wooded trail" class="hero__image">
 

@@ -15,6 +15,9 @@ public class RegionController {
     @Resource
     private RegionRepository regionRepo;
 
+    @Resource
+    private ContinentRepository continentRepo;
+
     @RequestMapping("/regions")
     public String displayRegions(Model model) {
         model.addAttribute("regionsModel",regionRepo.findAll());
@@ -24,7 +27,7 @@ public class RegionController {
     @GetMapping("/regions/{regionName}")
     public String displaySingleRegion(@PathVariable String regionName, Model model){
         Optional<Region> retrievedRegion = regionRepo.findByRegionName(regionName);
-        model.addAttribute("region",retrievedRegion.get());
+        model.addAttribute("regionModel",retrievedRegion.get());
         return "regionView";
 
     }

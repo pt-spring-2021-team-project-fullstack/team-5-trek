@@ -20,10 +20,17 @@ public class TrekTypeController {
         return "trekTypesView";
     }
 
+    @GetMapping("/trek-types/{id}")
+    public String displaySingleTrekType(@PathVariable Long id, Model model) {
+        Optional<TrekType> retrievedTrekType = trekTypeRepo.findById(id);
+
+        model.addAttribute("trekTypeModel", retrievedTrekType.get());
+
     @GetMapping("/trek-types/{difficultyLevel}")
     public String displaySingleTrekType(@PathVariable String difficultyLevel, Model model) {
         TrekType retrievedTrekType = trekTypeRepo.findTrekTypeByDifficultyLevel(difficultyLevel);
         model.addAttribute("trek-type", retrievedTrekType);
+
         return "trekTypeView";
     }
 }

@@ -34,10 +34,4 @@ public class TrekController {
 //        return "trekView";
 //    }
 
-//    @GetMapping("/trek-types/{trekType}")
-//    public String displayTrekType(@PathVariable String trekType, Model model) {
-//        Optional<TrekType> retrievedTrekType = trekTypeRepo.findByTrekTypePerContinent(trekType);
-//        model.addAttribute("trekTypeModel", retrievedTrekType.get());
-//        return "trekTypeView";
-//    }
 }
