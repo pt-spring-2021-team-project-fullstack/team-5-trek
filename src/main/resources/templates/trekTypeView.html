@@ -7,11 +7,11 @@
 <body>
 
 <h1>/Trek Type View</h1>
+<p th:text="${trekTypeModel.trekType}"></p>
 
-<div th:each="trekType: ${TrekTypeModel.trekDifficultyLevel.treks}">
-    <a th:href="@{'/trekTypes/' + ${trek.trekName}}"
-       th:text="${trek.trekName}"></a>
-
+<div th:each="trek: ${trekTypeModel.allTreks}">
+    <p th:text="${trek.trekName}"></p>
 </div>
+
 </body>
 </html>

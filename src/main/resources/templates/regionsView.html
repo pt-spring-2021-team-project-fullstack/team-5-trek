@@ -32,7 +32,7 @@
 <!--</div>-->
     <div class="container-1">
 <div th:each="region:${regionsModel}" >
-    <a th:href="@{'/regions/'+ ${region.regionName}}"
+    <a th:href="@{'/regions/'+ ${regionName}}"
        th:text="${region.regionName} ">Region</a>
     </div>
 </div>

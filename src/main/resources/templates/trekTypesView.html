@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style-continents-view.css">
@@ -26,15 +26,6 @@
 </section>
 
 <h1>Trek Types View</h1>
-
-<div th:each="trekType: ${trekTypesModel}">
-    <a th:href="@{/trekType(id=${trekType.id})}"
-       th:text="${trekType.trekDifficultyLevel} ">Trek</a>
-</div>
-
-<footer>
-    <p>©Jackr Enterprises 2021</p>
-</footer>
 
 </body>
 </html>

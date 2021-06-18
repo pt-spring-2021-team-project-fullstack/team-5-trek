@@ -8,7 +8,7 @@
 <h1>Treks View</h1>
 <div th:each="trek:${treks}">
     <a th:href="@{'/treks/'+ ${trek.trekName}}"
-       th:text="${trek.trekName}">Trek</a>
+       th:text="${trek.trekName} ">Trek</a>
 </div>
 </body>
 </html>

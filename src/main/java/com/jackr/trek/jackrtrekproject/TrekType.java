@@ -16,7 +16,7 @@ public class TrekType {
 
     private String difficultyLevel;
 
-    @OneToMany(mappedBy = "trekDifficultyLevel")
+    @OneToMany(mappedBy = "difficultyLevel")
     private Collection<Trek> treks;
 
     protected TrekType() {}

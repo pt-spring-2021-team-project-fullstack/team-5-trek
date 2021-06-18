@@ -30,7 +30,7 @@ public class JPAWiringTest {
 
     @Test
     public void trekTypeShouldHaveAListOfTreks() {
-        TrekType testTrekType = new TrekType("Test trekType");
+        TrekType testTrekType = new TrekType("Test type");
         TrekType testTrekType2 = new TrekType("Test type2");
         Continent testContinent1 = new Continent("Test continentName");
         Region testRegion1 = new Region("Test regionName");
