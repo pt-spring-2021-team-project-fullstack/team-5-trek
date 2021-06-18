@@ -34,9 +34,9 @@ public class JPAWiringTest {
         TrekType testTrekType2 = new TrekType("Test type2");
         Continent testContinent1 = new Continent("Test continentName");
         Region testRegion1 = new Region("Test regionName");
-        Trek testTrek1 = new Trek("Name", testTrekType, testContinent1, testRegion1, "Description", true, "landmarks",
+        Trek testTrek1 = new Trek("Name", testTrekType, testContinent1, testRegion1, "Description", "yes", "landmarks",
                 "Campsite Info", "Transportation", "Nearby Activities", "Cost", "Length", "Reviews");
-        Trek testTrek2 = new Trek("Name", testTrekType2, testContinent1, testRegion1, "Description", true, "landmarks",
+        Trek testTrek2 = new Trek("Name", testTrekType2, testContinent1, testRegion1, "Description", "yes", "landmarks",
                 "Campsite Info", "Transportation", "Nearby Activities", "Cost", "Length", "Reviews");
 
         trekTypeRepo.save(testTrekType);
