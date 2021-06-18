@@ -9,7 +9,7 @@
 <!--<h2 th:text="${region.regionName}"></h2>-->
 
 <div th:each="trek:${regionModel.treks}">
-    <a th:href="@{'/regions/' + ${trek.trekName}}"
+    <a th:href="@{'/treks/'+ ${trek.trekName}}"
        th:text="${trek.trekName}"></a>
 </div>
 
