@@ -8,8 +8,10 @@
 <h1>Continent View</h1>
 <h2 th:text="${continent.name}"></h2>
 
-<div th:each="region:${regions}" >
-        <p th:text="${region.regionName}" ></p>
+<div th:each="region:${continent.regions}">
+    <a th:href="@{'/regions/'+ ${region.regionName}}"
+       th:text="${region.regionName}"></a>
 </div>
+
 </body>
 </html>

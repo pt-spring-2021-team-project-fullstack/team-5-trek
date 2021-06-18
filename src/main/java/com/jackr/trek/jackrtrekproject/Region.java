@@ -17,6 +17,7 @@ public class Region {
     private Collection<Trek> treks;
 
     @ManyToOne
+    @JoinColumn(name = "continent_id")
     private Continent continent;
 
     @ManyToMany(mappedBy = "regions")
@@ -34,20 +35,12 @@ public class Region {
         return treks;
     }
 
-//    public Continent getContinent() {
-//        return continent;
-//    }
-
     protected Region() {}
 
-    public Region(String regionName) {
+    public Region(String regionName, Continent continent) {
         this.regionName = regionName;
+        this.continent= continent;
     }
-
-//    public Region(String nameOfRegion, Continent continent) {
-//        this.nameOfRegion = nameOfRegion;
-//        this.continent = continent;
-//    }
 
     @Override
     public boolean equals(Object o) {
