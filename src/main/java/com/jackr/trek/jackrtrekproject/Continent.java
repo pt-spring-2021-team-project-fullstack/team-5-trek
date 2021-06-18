@@ -1,9 +1,6 @@
 package com.jackr.trek.jackrtrekproject;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -16,11 +13,14 @@ public class Continent {
 
     private String name;
 
-    @OneToMany(mappedBy = "continent")
+    @OneToMany(mappedBy = "trekDifficultyLevel")
     private Collection<Trek> treks;
 
     @OneToMany(mappedBy = "continent")
     private Collection<Region> regions;
+
+    @ManyToOne
+    private TrekType trekType;
 
     public Long getId() {
         return id;

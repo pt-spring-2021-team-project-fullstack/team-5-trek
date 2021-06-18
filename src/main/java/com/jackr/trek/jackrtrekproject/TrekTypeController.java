@@ -24,7 +24,8 @@ public class TrekTypeController {
     @GetMapping("/trek-types/{id}")
     public String displaySingleTrekType(@PathVariable Long id, Model model) {
         Optional<TrekType> retrievedTrekType = trekTypeRepo.findById(id);
-        model.addAttribute("trekTypeModel", retrievedTrekType);
+
+        model.addAttribute("trekTypeModel", retrievedTrekType.get());
         return "trekTypeView";
     }
 }

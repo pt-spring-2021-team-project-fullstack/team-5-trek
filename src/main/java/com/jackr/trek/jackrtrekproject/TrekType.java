@@ -19,6 +19,9 @@ public class TrekType {
     @OneToMany(mappedBy = "trekDifficultyLevel")
     private Collection<Trek> treks;
 
+    @OneToMany(mappedBy = "trekType")
+    private Collection<Continent> continents;
+
     protected TrekType() {}
 
     public TrekType(String difficultyLevel) {
