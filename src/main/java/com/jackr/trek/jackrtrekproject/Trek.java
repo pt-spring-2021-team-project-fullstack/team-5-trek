@@ -37,7 +37,7 @@ public class Trek {
     private String reviews;
 
     @ManyToOne
-    private TrekType trekDifficultyLevel;
+    private TrekType difficultyLevel;
 
     @ManyToOne
     private Continent continent;
@@ -92,7 +92,7 @@ public class Trek {
     }
 
     public TrekType getDifficultyLevel() {
-        return trekDifficultyLevel;
+        return difficultyLevel;
     }
 
     public Continent getContinent() {
@@ -107,7 +107,7 @@ public class Trek {
                 String guidedOrNot, String landmarks, String campsiteInfo, String transportation, String nearbyActivities,
                 String cost, String length, String reviews) {
         this.trekName = trekName;
-        this.trekDifficultyLevel = difficultyLevel;
+        this.difficultyLevel = difficultyLevel;
         this.continent = continent;
         this.region = region;
         this.description = description;

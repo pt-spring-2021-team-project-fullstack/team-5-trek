@@ -38,7 +38,7 @@ public class WebLayerTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("trekTypesView"))
-                .andExpect(model().attributeExists("trekTypesModel"));
+                .andExpect(model().attributeExists("trek-types"));
     }
 
     @Test
@@ -65,7 +65,7 @@ public class WebLayerTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("regionsView"))
-                .andExpect(model().attributeExists("regionsModel"));
+                .andExpect(model().attributeExists("regions"));
     }
 
 //    @Test
@@ -75,20 +75,20 @@ public class WebLayerTest {
 //        mockMvc.perform(get("/trek-types/Easy"))
 //                .andExpect(status().isOk())
 //                .andExpect(view().name("trekTypeView"))
-//                .andExpect(model().attributeExists("trekTypeModel"));
+//                .andExpect(model().attributeExists("trek-type"));
 //    }
-//
-//    @Test
-//    public void shouldBeOkForASingleTrekEndpointWithTrekViewAndTrekModelAttribute() throws Exception {
-//        TrekType testTrekType = new TrekType("Easy");
-//        Continent testContinent = new Continent("Antarctica");
-//        Region testRegion = new Region("Ross Sea");
-//        Trek testTrek = new Trek("Name", testTrekType, testContinent, testRegion, "Cold", true,
-//                "ice", "tent", "sled", "skiing", "$500", "3 days", "fun");
-//        when(trekRepo.findById(1L)).thenReturn(testTrek);
-//        mockMvc.perform(get("/treks/1"))
-//                .andExpect(status().isOk())
-//                .andExpect(view().name("trekView"))
-//                .andExpect(model().attributeExists("trek"));
-//    }
+
+    @Test
+    public void shouldBeOkForASingleTrekEndpointWithTrekViewAndTrekModelAttribute() throws Exception {
+        TrekType testTrekType = new TrekType("Easy");
+        Continent testContinent = new Continent("Antarctica");
+        Region testRegion = new Region("Ross Sea");
+        Trek testTrek = new Trek("Name", testTrekType, testContinent, testRegion, "Cold", true,
+                "ice", "tent", "sled", "skiing", "$500", "3 days", "fun");
+        when(trekRepo.findById(1L)).thenReturn(java.util.Optional.of(testTrek));
+        mockMvc.perform(get("/treks/1"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("trekView"))
+                .andExpect(model().attributeExists("trek"));
+    }
 }

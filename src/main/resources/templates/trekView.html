@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Trek Information</h1>
-
+<h1>TrekView</h1>
+<div th:each="trek: ${treks}">
     <p th:text=" 'Trek Name: ' + ${trek.trekName}"></p>
     <p th:text=" 'Description: ' + ${trek.description}"></p>
     <p th:text=" 'Guided: ' + ${trek.guidedOrNot}"></p>
@@ -17,6 +17,6 @@
     <p th:text=" 'Cost: ' + ${trek.cost}"></p>
     <p th:text=" 'Length: ' + ${trek.length}"></p>
     <p th:text=" 'Reviews: ' + ${trek.reviews}"></p>
-
+</div>
 </body>
 </html>
