@@ -115,7 +115,6 @@ public class Populator implements CommandLineRunner {
         regionRepo.save(westAntarctica);
         regionRepo.save(rossSea);
 
-        //we will eventually include all the treks here
         Trek trek1 = new Trek("Sahara Desert Trek", difficult, africa, sahara, "Rediscover true " +
                 "adventure in the awe-inspiring Sahara Desert. This eight day trek covers 100km passing through Morocco’s" +
                 " forbidding landscape punctuated by peaks, gorges, dunes and oases.", true, "Climb " +
@@ -126,6 +125,38 @@ public class Populator implements CommandLineRunner {
                 "8 days", "This trek is challenging, unforgiving, and life-changing. Prepare for very hot " +
                 "days and cold nights. The terrain is rocky and sandy.");
 
+        Trek trek2 = new Trek("Camel Trekking In Timbuktu", strenuous, africa, sahel, "For two days you will ride to and" +
+                " from base camp on the back of a camel. You will experience the peaceful quietness of the desert surrounding " +
+                "Timbuktu.", true, "The desert around Timbuktu looks like the kind of dune system you'd find behind a beach; " +
+                "it's sandy, but it's also covered in vegetation.", "Bring a tent and sleep under the stars!", "Camel",
+                "Visit local villages to learn more about life in Timbuktu", "$550", "2 Days",
+                "Camels walk slowly, no quicker than humans at a sedate pace, and when you combine this rocking motion " +
+                        "with the deadening effect of the sand sucking up all the sound around you, you get a truly relaxing calm.");
+
+        Trek trek3 = new Trek("Uganda Safari Trek", moderate, africa, savanna, "This Uganda Safari trek begins from and " +
+                "ends in Kampala-Uganda; it will take you to the western part of the country that is gifted with various " +
+                "wildlife species and beautiful sceneries.", true, "The main destinations in this safari are Lake Mburo " +
+                "National Park, Bwindi Impenetrable Forest, Queen Elizabeth National Park, and Kibale National Park.",
+                "You can choose to stay in Mihingo Lodge (Luxury), Lake Mburo Safari Lodge (Mid-range, or Eagle's Nest " +
+                        "Lodge (Budget).", "Transportation to each national park will be provided by a driver guide. While " +
+                "in the national parks, you will either be riding in a vehicle, walking, or on a boat cruise (Kazinga Channel).",
+                "There are many different safaris and tours available nearby if you would like to extend your adventure.",
+                "$1,793", "8 Days", "Everything was amazing - the communication, the ability to " +
+                "customize our own safari and our FANTASTIC guide! I highly recommend using Insight Safari in Uganda. " +
+                "We saw and learned so much! Thank you for making our trip so enjoyable!");
+
+        Trek trek4 = new Trek("Top End & Kimberley Spectacular", easy, australia, continentalIslands, "Start in Darwin and " +
+                "end in Broome! With the Discovery tour Top End & Kimberley Spectacular, you have a 13 days tour package taking " +
+                "you through Darwin, Australia and 7 other destinations in Australia", true, "Visit the world’s largest " +
+                "single producer of diamonds on your tour of the Argyle Diamond Mine.", "Various Cabins each night",
+                "On Foot and Cruise Ship with options including camel and motorcycle rides.", "Discover the rare and beautiful " +
+                "Australian South Sea Pearl on a tour of Willie Creek Pearl Farm", "$6,045", "13 Days",
+                "We had a fabulous time! If there would be a complaint it would be that we had a lot more meals " +
+                        "and fun than what was advertised. Can't compliment this trip enough! -Laurie");
+
         trekRepo.save(trek1);
+        trekRepo.save(trek2);
+        trekRepo.save(trek3);
+        trekRepo.save(trek4);
     }
 }
