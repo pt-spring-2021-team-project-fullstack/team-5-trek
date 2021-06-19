@@ -1,9 +1,6 @@
 package com.jackr.trek.jackrtrekproject;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -14,14 +11,20 @@ public class Trek {
     private Long id;
 
     private String trekName;
+    @Lob
     private String description;
     private boolean guidedOrNot;
+    @Lob
     private String landmarks;
+    @Lob
     private String campsiteInfo;
+    @Lob
     private String transportation;
+    @Lob
     private String nearbyActivities;
     private String cost;
     private String length;
+    @Lob
     private String reviews;
 
     @ManyToOne
